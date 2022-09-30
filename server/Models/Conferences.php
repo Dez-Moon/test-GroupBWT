@@ -14,7 +14,7 @@ class Conferences
 
     public function getConferences()
     {
-        $data = $this->db->query("SELECT * FROM `conferences`");
+        $data = $this->db->query("SELECT * FROM `conferences` ORDER BY `id` DESC");
         return json_encode($data);
     }
 

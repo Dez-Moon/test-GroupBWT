@@ -43,6 +43,7 @@ const Map = React.memo(({ address }) => {
     setCoords(address);
   }, [address]);
   if (!isLoaded) return <></>;
+
   return (
     <GoogleMap
       mapContainerStyle={containerStyle}
@@ -52,7 +53,9 @@ const Map = React.memo(({ address }) => {
       onUnmount={onUnmount}
       options={defaultOptions}
     >
-      {address && <Marker position={coords} />}
+      {!!Number(coords.lat) && !!Number(coords.lng) && (
+        <Marker position={coords} />
+      )}
     </GoogleMap>
   );
 });
