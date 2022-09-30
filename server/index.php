@@ -7,7 +7,6 @@ header('Content-type: json/application');
 
 require_once __DIR__ . '/System/autoload.php';
 $router = new Routers\conferencesRouter();
-$conferencesController = new Controllers\conferencesController();
 $router->add(
     'GET',
     '/conferences',
