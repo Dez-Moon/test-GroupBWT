@@ -12,7 +12,6 @@ const App = () => {
   const [error, setError] = useState();
   return (
     <div className='App'>
-      <div>{process.env.REACT_APP_API_KEY}</div>
       <ErrorContext.Provider value={{ error, setError }}>
         <Routes>
           <Route path='/' element={<Main />} />
